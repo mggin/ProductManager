@@ -1,0 +1,17 @@
+<div class="card p-3" *ngIf="product">
+    <h5>Edit Product</h5>
+    <form (submit)="updateProduct()">
+         <span class="small text-warning" *ngIf="msg.title">{{msg["title"].message}}</span>
+        <input type="text" placeholder="Title" class="form-control form-control-sm" name="product.title" [(ngModel)]="product.title" />
+        <span class="small text-warning" *ngIf="msg.price">{{msg["price"].message}}</span>
+        <input type="number" placeholder="Price" class="form-control form-control-sm mt-2" name="product.price" [(ngModel)]="product.price" />
+        <span class="small text-warning" *ngIf="msg.imgUrl">{{msg["imgUrl"].message}}</span>
+        <input type="string" placeholder="Image address" class="form-control form-control-sm mt-2" name="product.imgUrl" [(ngModel)]="product.imgUrl" />
+        <div class="row col mt-2">
+            <button type="submit" class="btn btn-sm btn-warning">Update</button>
+            <button class="btn btn-sm btn-danger ml-2" (click)="deleteProduct()">Delete</button>
+        </div>
+    </form>
+    </div>
+
+    <router-outlet></router-outlet>

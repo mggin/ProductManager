@@ -1,0 +1,15 @@
+<div class="card p-3">
+    <h5>Create Product</h5>
+    <form (submit)="createProduct()">
+        <span class="small text-warning" *ngIf="msg.title">{{msg["title"].message}}</span>
+        <input type="text" placeholder="Title" class="form-control form-control-sm" name="product.title" [(ngModel)]="product.title" />
+        <span class="small text-warning" *ngIf="msg.price">{{msg["price"].message}}</span>
+        <input type="number" placeholder="Price" class="form-control form-control-sm mt-2" name="product.price" [(ngModel)]="product.price" />
+        <span class="small text-warning" *ngIf="msg.imgUrl">{{msg["imgUrl"].message}}</span>
+        <input type="string" placeholder="Image address" class="form-control form-control-sm mt-2" name="product.imgUrl" [(ngModel)]="product.imgUrl" />
+        <div class="row col mt-2">
+            <button class="btn btn-sm btn-danger">Cancel</button>
+            <button type="submit" class="btn btn-sm btn-success ml-2">Create</button>
+        </div>
+    </form>
+</div>

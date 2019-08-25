@@ -1,0 +1,6 @@
+<div *ngIf="route.children.length === 0" class="row col">
+    <div *ngFor="let product of products" class="card col-3 m-1">
+        <app-product [product]="product" (handleGetProducts)="getProducts()"></app-product>
+    </div>
+</div>
+<router-outlet></router-outlet>

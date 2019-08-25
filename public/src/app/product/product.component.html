@@ -1,0 +1,9 @@
+<div *ngIf="product" class="col">
+    <img [src]="product.imgUrl" class="img-fluid p-2"/>
+    <p class="text-center m-0 mt-3">{{product.title}}</p>
+    <p class="small text-center m-0 mb-2">${{product.price}}</p>
+    <div class="row ">
+        <button class="btn btn-sm btn-warning col m-1" [routerLink]="['/products', 'edit', product._id]">Edit</button>
+        <button class="btn btn-sm btn-danger col m-1" (click)="deleteProduct(product._id)">Delete</button>
+    </div>
+</div>
